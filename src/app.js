@@ -13,16 +13,9 @@ import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase'; 
 
 const store = configureStore();
-
-
-store.dispatch(addExpense({description: 'Water bill', amount: 25, createdAt: 21000}));
-store.dispatch(addExpense({description: 'Electricity bill', amount: 39, createdAt: 22000}));
-store.dispatch(addExpense({description: 'Rent', amount: 1250, createdAt: 23000}));
-
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
 const jsx = (
     <Provider store={store}>
